@@ -1,0 +1,16 @@
+---
+import { siteTitle } from "../constants";
+---
+
+<header class="site-header text-center py-2">
+  <div class="container">
+    <h1><a href="/">{siteTitle}</a></h1>
+  </div>
+</header>
+
+<style>
+  .site-header h1 a,
+  .site-header h1 a:visited {
+    color: var(--pico-primary-background);
+  }
+</style>

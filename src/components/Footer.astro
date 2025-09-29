@@ -1,0 +1,33 @@
+---
+import { siteTitle } from "../constants";
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <p>
+      <strong>{siteTitle}</strong> | <a href="/about">About</a> <!--| <a
+        href="/prompt">All prompts</a
+    >--> | <a href="/prompt/random">Start a conversation...</a>
+    </p>
+    <hr />
+    <p><small>Made with 😂 by <a href="https://rewdy.lol">rewdy</a></small></p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--pico-primary-background);
+    color: var(--pico-primary-inverse);
+    p {
+      color: inherit;
+    }
+    hr {
+      max-width: 80px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    small {
+      opacity: 0.7;
+    }
+  }
+</style>

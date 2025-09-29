@@ -1,0 +1,20 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../components/Layout.astro";
+
+const prompts = await getCollection("prompts");
+---
+
+<Layout>
+  <h1>Prompts</h1>
+  <p>This list shows all prompts.</p>
+  <ol>
+    {
+      prompts.map((prompt) => (
+        <li>
+          <a href={`/prompt/${prompt.slug}`}>{prompt.body}</a>
+        </li>
+      ))
+    }
+  </ol>
+</Layout>
