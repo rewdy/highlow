@@ -13,7 +13,7 @@ const promptSlugs = prompts.map((prompt) => prompt.slug);
   </p>
 </Layout>
 
-<script define:vars={{ promptSlugs, rootPath }}>
+<script define:vars={{ promptSlugs, rootPath }} is:inline>
   // Immediately redirect to a random prompt when the page loads
   function redirectToRandomPrompt() {
     const randomIndex = Math.floor(Math.random() * promptSlugs.length);
