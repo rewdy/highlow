@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { rootPath } from "../../constants";
 import Layout from "../../components/Layout.astro";
 
 const prompts = await getCollection("prompts");
@@ -12,12 +13,12 @@ const promptSlugs = prompts.map((prompt) => prompt.slug);
   </p>
 </Layout>
 
-<script define:vars={{ promptSlugs }}>
+<script define:vars={{ promptSlugs, rootPath }}>
   // Immediately redirect to a random prompt when the page loads
   function redirectToRandomPrompt() {
     const randomIndex = Math.floor(Math.random() * promptSlugs.length);
     const randomSlug = promptSlugs[randomIndex];
-    window.location.href = `/prompt/${randomSlug}`;
+    window.location.href = `${rootPath}prompt/${randomSlug}`;
   }
 
   // Execute immediately when the script loads

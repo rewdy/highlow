@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../components/Layout.astro";
+import { rootPath } from "../../constants";
 
 export async function getStaticPaths() {
   const promptPages = await getCollection("prompts");
@@ -21,14 +22,14 @@ const { Content } = await entry.render();
     </div>
     <footer class="d-flex justify-content-between align-items-center">
       <div class="text-muted"><small>Prompt #{entry.slug}</small></div>
-      <div><a href="/prompt/random" role="button">See another</a></div>
+      <div><a href={`${rootPath}prompt/random`} role="button">See another</a></div>
     </footer>
   </article>
 </Layout>
 
 <style>
   .prompt-content {
-    text-align: center;;
+    text-align: center;
     font-size: 2rem;
     line-height: 1.5;
     max-width: 600px;

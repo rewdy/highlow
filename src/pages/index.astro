@@ -1,5 +1,6 @@
 ---
 import Layout from "../components/Layout.astro";
+import { rootPath } from "../constants";
 ---
 
 <Layout isHome={true}>
@@ -7,6 +8,8 @@ import Layout from "../components/Layout.astro";
     Welcome to high/low, a tool to help you get to know your friends better!
   </p>
   <p class="text-center">
-    <a href="/prompt/random" role="button">Start a conversation...</a>
+    <a href={`${rootPath}prompt/random`} role="button"
+      >Start a conversation...</a
+    >
   </p>
 </Layout>
