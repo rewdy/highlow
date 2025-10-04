@@ -2,16 +2,17 @@
 import { getCollection } from "astro:content";
 import { rootPath } from "../../constants";
 import Layout from "../../components/Layout.astro";
+import CardLayout from "../../components/CardLayout.astro";
 
 const prompts = await getCollection("prompts");
 const promptSlugs = prompts.map((prompt) => prompt.slug);
 ---
 
-<Layout>
+<CardLayout title="Random Prompt">
   <p class="text-center">
     <span aria-busy="true">Getting random prompt...</span>
   </p>
-</Layout>
+</CardLayout>
 
 <script define:vars={{ promptSlugs, rootPath }} is:inline>
   // Immediately redirect to a random prompt when the page loads

@@ -1,0 +1,18 @@
+---
+import { rootPath, siteTitle } from "../constants";
+---
+
+<header class="site-header">
+  <h1 class="site-title-card"><a href={rootPath}>{siteTitle}</a></h1>
+</header>
+
+<style>
+  .site-header h1 {
+    font-size: 1rem;
+    margin: 1rem;
+  }
+  .site-header h1 a,
+  .site-header h1 a:visited {
+    color: var(--pico-primary-background);
+  }
+</style>
