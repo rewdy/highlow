@@ -1,0 +1,12 @@
+# Example terraform.tfvars file
+# Copy this to terraform.tfvars and fill in your values
+# DO NOT commit terraform.tfvars to git!
+
+aws_region         = "us-east-1"
+app_name           = "highlow"
+github_repository  = "https://github.com/yourusername/highlow-remix"
+github_token       = "ghp_your_github_token_here"
+main_branch_name   = "main"
+
+# Uncomment if using custom domain
+# domain_name = "yourdomain.com"

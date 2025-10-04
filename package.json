@@ -1,21 +1,33 @@
 {
   "name": "highlow",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "check": "astro check",
-    "preview": "astro preview",
-    "astro": "astro"
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --apply .",
+    "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.4",
-    "astro": "^5.14.1",
-    "typescript": "5.9.2"
+    "@react-router/node": "^7.9.2",
+    "@react-router/serve": "^7.9.2",
+    "gray-matter": "^4.0.3",
+    "isbot": "^5.1.31",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router": "^7.9.2"
   },
   "devDependencies": {
-    "@picocss/pico": "^2.1.1",
-    "sass": "^1.93.2"
+    "@biomejs/biome": "^2.2.5",
+    "@react-router/dev": "^7.9.2",
+    "@types/node": "^22",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }

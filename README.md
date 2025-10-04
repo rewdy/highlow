@@ -1,60 +1,102 @@
 # High/Low
 
-A tool to help you start meaningful conversations through thoughtful prompts.
+A conversation prompts app designed to help you have better, deeper conversations. High/Low presents thought-provoking questions that range from light-hearted and fun to deeper and more reflective topics, perfect for breaking the ice or sparking meaningful dialogue.
 
-High/Low is built with [Astro](https://astro.build) and features a collection of conversation starters designed to spark deeper connections and interesting discussions. Whether you're looking to break the ice, reconnect with friends, or explore new perspectives, these prompts can help guide meaningful conversations.
+## Features
 
-## ✨ Features
+- 🗣️ Curated conversation prompts across multiple categories
+- 📱 Swipe-based interface for easy navigation
+- 🎨 Beautiful gradient-based UI with smooth animations
+- 🚀 Server-side rendering for fast initial loads
+- ⚡️ Hot Module Replacement (HMR) for development
+- 🔒 TypeScript for type safety
+- � Custom CSS (no framework bloat)
 
-- Curated collection of conversation prompts
-- Random prompt generator for spontaneous discussions
-- Clean, accessible interface
-- Fast, static-site performance with Astro
+## Tech Stack
 
-## 🤝 Contributing
+- **React Router v7** - Full-stack framework with SSR
+- **React 19** - Latest React features
+- **TypeScript** - Type-safe development
+- **Bun** - Fast package management and runtime
+- **Custom CSS** - No Tailwind, just clean custom styles
+- **Vite** - Fast build tooling
 
-This is an open source project! We welcome contributions, especially new prompts. If you have conversation starters you'd love to share:
+## Getting Started
 
-1. Fork this repository
-2. Add your prompt as a new `.md` file in `src/content/prompts/`
-3. Follow the existing format and naming convention
-4. Submit a pull request
+### Installation
 
-Your prompts should be thoughtful, inclusive, and designed to encourage meaningful dialogue.
+Install the dependencies:
 
-## 🚀 Project Structure
-
-Inside of this Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   ├── components/        # Astro components
-│   ├── content/
-│   │   └── prompts/       # Conversation prompt markdown files
-│   ├── pages/
-│   │   ├── prompt/        # Dynamic prompt pages
-│   │   └── index.astro    # Homepage
-│   └── style/             # Global styles
-└── package.json
+```bash
+bun install
 ```
 
-Prompts are stored as markdown files in `src/content/prompts/`. Each prompt is exposed as a route and can be accessed individually or through the random prompt generator.
+### Development
 
-## 🧞 Commands
+Start the development server with HMR:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+bun run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`                 | Starts local dev server at `localhost:4321`      |
-| `bun build`               | Build your production site to `./dist/`          |
-| `bun preview`             | Preview your build locally, before deploying     |
-| `bun astro ...`           | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help`     | Get help using the Astro CLI                     |
+Your application will be available at `http://localhost:5173`.
 
-## Shout out
+## Building for Production
 
-Thank you to Sonnet 4 for helping me to write this so much faster than I would have otherwise. 🦾
+Create a production build:
+
+```bash
+bun run build
+```
+
+## Deployment
+
+### Docker Deployment
+
+To build and run using Docker:
+
+```bash
+docker build -t my-app .
+
+# Run the container
+docker run -p 3000:3000 my-app
+```
+
+The containerized application can be deployed to any platform that supports Docker, including:
+
+- AWS ECS
+- Google Cloud Run
+- Azure Container Apps
+- Digital Ocean App Platform
+- Fly.io
+- Railway
+
+### DIY Deployment
+
+If you're familiar with deploying Node applications, the built-in app server is production-ready.
+
+Make sure to deploy the output of `bun run build`
+
+```
+├── package.json
+├── bun.lockb
+├── build/
+│   ├── client/    # Static assets
+│   └── server/    # Server-side code
+```
+
+## Project Structure
+
+```
+app/
+├── components/     # Reusable React components
+├── data/          # Static data (prompts)
+├── hooks/         # Custom React hooks
+├── models/        # TypeScript type definitions
+├── prompts/       # Individual prompt markdown files
+└── routes/        # React Router routes
+```
+
+---
+
+Made with 😂 by [rewdy](https://www.rewdy.lol) (and Claude Sonnet 4.5!)
