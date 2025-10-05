@@ -27,8 +27,14 @@ variable "main_branch_name" {
   default     = "main"
 }
 
-# Uncomment if using custom domain
-# variable "domain_name" {
-#   description = "Custom domain name for the app"
-#   type        = string
-# }
+variable "domain_name" {
+  description = "Custom domain name for the app (e.g., highlow.com)"
+  type        = string
+  default     = ""
+}
+
+variable "route53_zone_id" {
+  description = "Route 53 hosted zone ID for the domain (optional - only needed if you want Terraform to manage DNS records)"
+  type        = string
+  default     = ""
+}

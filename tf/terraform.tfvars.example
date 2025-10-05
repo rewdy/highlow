@@ -4,9 +4,16 @@
 
 aws_region         = "us-east-1"
 app_name           = "highlow"
-github_repository  = "https://github.com/yourusername/highlow-remix"
+github_repository  = "https://github.com/yourusername/highlow"
 github_token       = "ghp_your_github_token_here"
 main_branch_name   = "main"
 
-# Uncomment if using custom domain
-# domain_name = "yourdomain.com"
+# Custom domain configuration (optional)
+# Leave empty ("") if you don't want to use a custom domain
+domain_name = ""  # e.g., "highlow.com"
+
+# Route 53 Zone ID (optional)
+# Only needed if you want Terraform to automatically create DNS records
+# Find this in Route 53 console → Hosted zones → Your domain → Hosted zone ID
+# If left empty, you'll need to manually add DNS records to Route 53
+route53_zone_id = ""  # e.g., "Z1234567890ABC"
