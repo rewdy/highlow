@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "framework": {
+    "name": "react-router",
+    "version": "7"
+  },
+  "imageSettings": {
+    "sizes": [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    "domains": [],
+    "minimumCacheTTL": 60,
+    "formats": ["image/webp"]
+  },
+  "routes": [
+    {
+      "path": "/_assets/*",
+      "target": "file",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/assets/*",
+      "target": "file",
+      "cacheControl": "public, max-age=31536000, immutable"
+    },
+    {
+      "path": "/*",
+      "target": "ssr",
+      "cacheControl": "public, max-age=0, must-revalidate"
+    }
+  ]
+}

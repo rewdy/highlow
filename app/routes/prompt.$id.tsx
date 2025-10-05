@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate, Link } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import { useEffect, useState, useRef } from "react";
 import type { Route } from "./+types/prompt.$id";
 import {
@@ -17,7 +17,7 @@ import "./prompt.$id.css";
 export const loader = ({ params }: Route.LoaderArgs) => {
   const id = parseInt(params.id, 10);
 
-  if (isNaN(id)) {
+  if (Number.isNaN(id)) {
     throw new Response("Invalid prompt ID", { status: 400 });
   }
 
@@ -168,6 +168,7 @@ export default function PromptRoute() {
       <div className="prompt-view" {...bind}>
         {/* Previous prompt button (appears above card) */}
         <button
+          type="button"
           className="prompt-view__nav prompt-view__nav--previous"
           onClick={() => handleNavigation("down", previousId)}
           disabled={transitionState !== "idle"}
@@ -199,6 +200,7 @@ export default function PromptRoute() {
 
         {/* Next prompt button (appears below card) */}
         <button
+          type="button"
           className="prompt-view__nav prompt-view__nav--next"
           onClick={() => handleNavigation("up", nextId)}
           disabled={transitionState !== "idle"}
