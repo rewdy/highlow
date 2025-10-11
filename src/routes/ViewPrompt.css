@@ -28,7 +28,9 @@
 
 /* Exiting animation - card flies off screen */
 .prompt-view__card-wrapper--exiting {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.6, 1), opacity 0.3s ease-out;
+  transition:
+    transform 0.4s cubic-bezier(0.4, 0, 0.6, 1),
+    opacity 0.3s ease-out;
 }
 
 /* Entering animation - card flies in from off screen */
@@ -79,7 +81,8 @@
   border-radius: 9999px; /* Fully rounded */
   backdrop-filter: blur(10px);
   pointer-events: none;
-  animation: bounceHint 7.5s ease-in-out 1,
+  animation:
+    bounceHint 7.5s ease-in-out 1,
     fadeOutAfterBounce 1s ease-out 7.5s forwards; /* Fade out after bounces complete */
   z-index: 10;
 }
