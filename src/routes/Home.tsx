@@ -32,7 +32,7 @@ export function Home() {
       </div>
 
       <footer className="home__footer">
-        Made with 😂 by <a href="https://www.rewdy.lol">rewdy</a>.
+        Made with 😂 by <a href="https://rewdy.lol">rewdy</a>.
       </footer>
     </div>
   );
