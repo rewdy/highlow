@@ -25,7 +25,7 @@ export function PromptRoute() {
   const [_, navigate] = useLocation();
   const [swipeRandom, setSwipeRandom] = useLocalStorageState(
     "swipeRandom",
-    false,
+    true,
   );
 
   const [prompt, setPrompt] = useState<Prompt | null>(null);
