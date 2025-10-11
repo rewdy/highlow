@@ -52,7 +52,7 @@ resource "aws_amplify_app" "highlow" {
           commands:
             - bun run build
       artifacts:
-        baseDirectory: build
+        baseDirectory: dist
         files:
           - '**/*'
       cache:
@@ -69,9 +69,11 @@ resource "aws_amplify_app" "highlow" {
   # Static SPA hosting (not SSR)
   platform = "WEB"
 
-  # Custom rules for React Router
+  # Custom rules for SPA routing
+  # This rule only rewrites paths without file extensions (routes)
+  # Static assets (CSS, JS, etc.) with extensions will load normally
   custom_rule {
-    source = "/<*>"
+    source = "</^((?!\\.).)*$>"
     status = "200"
     target = "/index.html"
   }
