@@ -1,0 +1,266 @@
+[
+  {
+    "id": 1,
+    "category": "lighthearted",
+    "tags": ["imagination", "food", "media"],
+    "question": "If you could have dinner with any fictional character, who would it be and what would you order?"
+  },
+  {
+    "id": 2,
+    "category": "lighthearted",
+    "tags": ["aspirations", "hobbies"],
+    "question": "What's a skill you'd love to master if time and effort weren't factors?"
+  },
+  {
+    "id": 3,
+    "category": "reflective",
+    "tags": ["growth", "perspective"],
+    "question": "What's a belief you held strongly in the past that you've since changed your mind about?"
+  },
+  {
+    "id": 4,
+    "category": "reflective",
+    "tags": ["identity", "self-awareness"],
+    "question": "When do you feel most like yourself?"
+  },
+  {
+    "id": 5,
+    "category": "deep",
+    "tags": ["meaning", "philosophy", "values"],
+    "question": "What do you think makes a life well-lived?"
+  },
+  {
+    "id": 6,
+    "category": "deep",
+    "tags": ["truth", "curiosity", "philosophy"],
+    "question": "If you could know the absolute truth about one thing, what would you want to know?"
+  },
+  {
+    "id": 7,
+    "category": "reflective",
+    "tags": ["relationships", "memories", "connection"],
+    "question": "What's the most memorable gift you've ever given or received, and why did it matter?"
+  },
+  {
+    "id": 8,
+    "category": "lighthearted",
+    "tags": ["imagination", "nature", "humor"],
+    "question": "If animals could talk for a day, which species would you most want to have a conversation with?"
+  },
+  {
+    "id": 9,
+    "category": "lighthearted",
+    "tags": ["humor", "childhood", "nostalgia"],
+    "question": "What's a kids' show or movie that you're secretly still entertained by as an adult?"
+  },
+  {
+    "id": 10,
+    "category": "lighthearted",
+    "tags": ["silly", "imagination", "humor"],
+    "question": "If you could rename yourself for a day with the silliest name possible, what would it be and why?"
+  },
+  {
+    "id": 11,
+    "category": "lighthearted",
+    "tags": ["food", "creativity", "humor"],
+    "question": "What's the weirdest food combination you genuinely enjoy that other people find strange?"
+  },
+  {
+    "id": 12,
+    "category": "lighthearted",
+    "tags": ["superpowers", "imagination", "fun"],
+    "question": "If you had to choose between being able to talk to animals or speak every human language, which would you pick?"
+  },
+  {
+    "id": 13,
+    "category": "lighthearted",
+    "tags": ["music", "nostalgia", "fun"],
+    "question": "What song is guaranteed to make you dance, even if you're alone and no one's watching?"
+  },
+  {
+    "id": 14,
+    "category": "lighthearted",
+    "tags": ["travel", "adventure", "imagination"],
+    "question": "If you could instantly teleport anywhere right now for just one hour, where would you go?"
+  },
+  {
+    "id": 15,
+    "category": "lighthearted",
+    "tags": ["silly", "imagination", "humor"],
+    "question": "What inanimate object in your home would have the most interesting stories to tell if it could talk?"
+  },
+  {
+    "id": 16,
+    "category": "lighthearted",
+    "tags": ["hobbies", "fun", "creativity"],
+    "question": "If you could become world-class at any hobby overnight, which would you choose?"
+  },
+  {
+    "id": 17,
+    "category": "lighthearted",
+    "tags": ["childhood", "memories", "fun"],
+    "question": "What's a game you used to play as a kid that you wish was still socially acceptable to play as an adult?"
+  },
+  {
+    "id": 18,
+    "category": "lighthearted",
+    "tags": ["money", "fun", "imagination"],
+    "question": "If you found $100 on the ground and had to spend it on something fun (not practical), what would you buy?"
+  },
+  {
+    "id": 19,
+    "category": "lighthearted",
+    "tags": ["personality", "humor", "fun"],
+    "question": "What emoji best represents your personality and why?"
+  },
+  {
+    "id": 20,
+    "category": "lighthearted",
+    "tags": ["comfort", "nostalgia", "joy"],
+    "question": "What's your favorite way to spend a completely lazy, do-nothing kind of day?"
+  },
+  {
+    "id": 21,
+    "category": "reflective",
+    "tags": ["growth", "change", "perspective"],
+    "question": "What's something you used to judge others for that you now understand or relate to?"
+  },
+  {
+    "id": 22,
+    "category": "reflective",
+    "tags": ["relationships", "influence", "gratitude"],
+    "question": "Who in your life has shaped who you are in ways they might not even realize?"
+  },
+  {
+    "id": 23,
+    "category": "reflective",
+    "tags": ["courage", "fear", "growth"],
+    "question": "What's something you're afraid of that you wish you weren't?"
+  },
+  {
+    "id": 24,
+    "category": "reflective",
+    "tags": ["self-awareness", "perspective", "insight"],
+    "question": "When you look back at the last year, what moment stands out as surprisingly significant?"
+  },
+  {
+    "id": 25,
+    "category": "reflective",
+    "tags": ["values", "priorities", "perspective"],
+    "question": "If you could give your younger self one piece of advice that you actually think they'd listen to, what would it be?"
+  },
+  {
+    "id": 26,
+    "category": "reflective",
+    "tags": ["creativity", "expression", "self-awareness"],
+    "question": "What's a way you express yourself that feels most authentically \"you\"?"
+  },
+  {
+    "id": 27,
+    "category": "reflective",
+    "tags": ["loss", "change", "perspective"],
+    "question": "What's something from your past that you miss but wouldn't want to go back to?"
+  },
+  {
+    "id": 28,
+    "category": "reflective",
+    "tags": ["comfort", "peace", "self-care"],
+    "question": "Where do you go (physically or mentally) when you need to feel safe and at peace?"
+  },
+  {
+    "id": 29,
+    "category": "reflective",
+    "tags": ["patterns", "self-awareness", "growth"],
+    "question": "What pattern do you keep repeating in your life, even though you know you should probably change it?"
+  },
+  {
+    "id": 30,
+    "category": "reflective",
+    "tags": ["joy", "passion", "energy"],
+    "question": "What's something that energizes you that other people might find draining?"
+  },
+  {
+    "id": 31,
+    "category": "reflective",
+    "tags": ["perspective", "values", "identity"],
+    "question": "If someone who loved you described what makes you special, what do you think they'd say?"
+  },
+  {
+    "id": 32,
+    "category": "reflective",
+    "tags": ["hope", "future", "perspective"],
+    "question": "What's something you're looking forward to that might seem small to others but means a lot to you?"
+  },
+  {
+    "id": 33,
+    "category": "deep",
+    "tags": ["spirituality", "meaning", "connection"],
+    "question": "Do you believe there's something bigger than yourself at work in the world? What does that look or feel like to you?"
+  },
+  {
+    "id": 34,
+    "category": "deep",
+    "tags": ["purpose", "legacy", "impact"],
+    "question": "If you knew you'd be remembered for one thing after you're gone, what would you want it to be?"
+  },
+  {
+    "id": 35,
+    "category": "deep",
+    "tags": ["spirituality", "wonder", "mystery"],
+    "question": "What's a mystery about life or the universe that you find beautiful precisely because it can't be fully explained?"
+  },
+  {
+    "id": 36,
+    "category": "deep",
+    "tags": ["love", "relationships", "vulnerability"],
+    "question": "What does love require of us that's actually really hard?"
+  },
+  {
+    "id": 37,
+    "category": "deep",
+    "tags": ["mortality", "perspective", "values"],
+    "question": "If you could know the exact date of your death, would you want to know? Why or why not?"
+  },
+  {
+    "id": 38,
+    "category": "deep",
+    "tags": ["suffering", "growth", "perspective"],
+    "question": "Do you think suffering serves a purpose, or is it just something we try to make meaning from?"
+  },
+  {
+    "id": 39,
+    "category": "deep",
+    "tags": ["choice", "freedom", "responsibility"],
+    "question": "How much of who you are do you think is your choice versus shaped by circumstances beyond your control?"
+  },
+  {
+    "id": 40,
+    "category": "deep",
+    "tags": ["connection", "humanity", "empathy"],
+    "question": "What do you think connects all human beings, regardless of culture, time, or place?"
+  },
+  {
+    "id": 41,
+    "category": "deep",
+    "tags": ["authenticity", "identity", "courage"],
+    "question": "When was the last time you felt completely yourself, without performing or hiding anything?"
+  },
+  {
+    "id": 42,
+    "category": "deep",
+    "tags": ["forgiveness", "healing", "relationships"],
+    "question": "Is there someone you need to forgive (including yourself)? What's stopping you?"
+  },
+  {
+    "id": 43,
+    "category": "deep",
+    "tags": ["change", "transformation", "growth"],
+    "question": "What part of yourself are you still becoming?"
+  },
+  {
+    "id": 44,
+    "category": "deep",
+    "tags": ["gratitude", "perspective", "presence"],
+    "question": "What's something ordinary in your life that would devastate you to lose?"
+  }
+]

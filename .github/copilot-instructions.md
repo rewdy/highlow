@@ -5,7 +5,6 @@
 This is a **conversation prompts app** that helps users have better and deeper conversations. The app presents thought-provoking questions that range from light-hearted and fun to deeper and more reflective topics.
 
 **Tech Stack:**
-- React Router v7 (with SSR)
 - TypeScript
 - React 19
 - Custom CSS (no Tailwind)

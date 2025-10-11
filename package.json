@@ -1,33 +1,30 @@
 {
-  "name": "highlow",
+  "name": "highlow-vite",
   "private": true,
+  "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "react-router build && cp deploy-manifest.json build/client/",
-    "dev": "react-router dev",
-    "start": "react-router-serve ./build/server/index.js",
-    "format": "biome format --write .",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "biome lint .",
+    "format": "biome format . --write",
     "check": "biome check .",
-    "check:fix": "biome check --apply .",
-    "typecheck": "react-router typegen && tsc"
+    "check:fix": "biome check . --fix",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@react-router/node": "^7.9.2",
-    "@react-router/serve": "^7.9.2",
-    "gray-matter": "^4.0.3",
-    "isbot": "^5.1.31",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router": "^7.9.2"
+    "wouter": "^3.7.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.5",
-    "@react-router/dev": "^7.9.2",
-    "@types/node": "^22",
-    "@types/react": "^19.1.13",
+    "@types/node": "^24.6.0",
+    "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.7",
-    "vite-tsconfig-paths": "^5.1.4"
+    "@vitejs/plugin-react-swc": "^4.1.0",
+    "globals": "^16.4.0",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
   }
 }

@@ -1,0 +1,33 @@
+.prompt-view__branding {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  z-index: 20;
+  transition: opacity 0.2s ease;
+  cursor: pointer;
+}
+
+.prompt-view__branding:hover {
+  opacity: 0.8;
+}
+
+.prompt-view__branding-high {
+  color: #f093fb;
+}
+
+.prompt-view__branding-slash {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 0.125rem;
+}
+
+.prompt-view__branding-low {
+  color: #4facfe;
+}
+
+@media (max-width: 640px) {
+  .prompt-view__branding {
+    font-size: 1.25rem;
+    top: 1rem;
+    left: 1rem;
+  }
+}
