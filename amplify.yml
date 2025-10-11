@@ -15,3 +15,20 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+customHeaders:
+  - pattern: '**/*.css'
+    headers:
+      - key: 'Content-Type'
+        value: 'text/css'
+  - pattern: '**/*.js'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/javascript'
+  - pattern: '**/*.json'
+    headers:
+      - key: 'Content-Type'
+        value: 'application/json'
+  - pattern: '**/*.svg'
+    headers:
+      - key: 'Content-Type'
+        value: 'image/svg+xml'

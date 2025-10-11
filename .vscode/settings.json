@@ -3,7 +3,5 @@
     "source.fixAll.biome": "always",
     "source.organizeImports": "always"
   },
-  "cSpell.words": [
-    "wouter"
-  ],
+  "cSpell.words": ["wouter"]
 }
