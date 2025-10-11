@@ -39,7 +39,7 @@ resource "aws_amplify_app" "highlow" {
   name       = var.app_name
   repository = var.github_repository
 
-  # Build settings for React Router 7 with Bun
+  # Build settings for Vite SPA with Bun
   build_spec = <<-EOT
     version: 1
     frontend:
@@ -52,22 +52,12 @@ resource "aws_amplify_app" "highlow" {
           commands:
             - bun run build
       artifacts:
-        baseDirectory: build/client
+        baseDirectory: build
         files:
           - '**/*'
       cache:
         paths:
           - node_modules/**/*
-    backend:
-      phases:
-        build:
-          commands:
-            - npm install -g bun
-            - bun install
-      artifacts:
-        baseDirectory: build/server
-        files:
-          - '**/*'
   EOT
 
   # Environment variables
@@ -76,8 +66,8 @@ resource "aws_amplify_app" "highlow" {
     _LIVE_UPDATES = "[{\"pkg\":\"bun\",\"type\":\"internal\",\"version\":\"latest\"}]"
   }
 
-  # Enable SSR
-  platform = "WEB_COMPUTE"
+  # Static SPA hosting (not SSR)
+  platform = "WEB"
 
   # Custom rules for React Router
   custom_rule {
@@ -153,37 +143,6 @@ resource "aws_amplify_domain_association" "highlow" {
     prefix      = "www"
   }
 }
-
-# Optional: Automatically create Route 53 records
-#
-# Not sure if I need these...
-#
-# This requires you to provide the Route 53 zone ID
-# If you prefer to add DNS records manually, comment this out
-# resource "aws_route53_record" "amplify_root" {
-#   count = var.domain_name != "" && var.route53_zone_id != "" ? 1 : 0
-
-#   zone_id = var.route53_zone_id
-#   name    = var.domain_name
-#   type    = "A"
-
-#   alias {
-#     name                   = aws_amplify_domain_association.highlow[0].certificate_verification_dns_record
-#     zone_id                = aws_amplify_domain_association.highlow[0].id
-#     evaluate_target_health = false
-#   }
-# }
-
-# resource "aws_route53_record" "amplify_www" {
-#   count = var.domain_name != "" && var.route53_zone_id != "" ? 1 : 0
-
-#   zone_id = var.route53_zone_id
-#   name    = "www.${var.domain_name}"
-#   type    = "CNAME"
-
-#   ttl     = 300
-#   records = [aws_amplify_domain_association.highlow[0].certificate_verification_dns_record]
-# }
 
 # Outputs
 output "amplify_app_id" {

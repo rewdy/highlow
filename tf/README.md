@@ -1,23 +1,24 @@
 # AWS Amplify Deployment with Terraform
 
-This directory contains Terraform configuration to deploy the High/Low app to AWS Amplify with optional custom domain support.
+This directory contains Terraform configuration to deploy the HighLow app to AWS Amplify with custom domain support for `highlow.lol`.
 
 ## What This Sets Up
 
-- **AWS Amplify App** with SSR support (WEB_COMPUTE platform)
+- **AWS Amplify App** - Static SPA hosting (no SSR)
 - **Automatic deployments** from GitHub (on push to main)
 - **CloudFront CDN** (automatically included by Amplify)
 - **SSL/TLS Certificate** (automatically created and managed by Amplify via ACM)
-- **Custom domain support** (optional) with automatic certificate validation
-- **Route 53 DNS records** (optional - can be managed by Terraform or manually)
+- **Custom domain** `highlow.lol` with www subdomain
+- **Route 53 DNS records** (automatically managed by Terraform)
 
 ## Prerequisites
 
 1. **AWS Account** with appropriate permissions
 2. **AWS CLI** configured with credentials (`aws configure`)
 3. **Terraform** installed (>= 1.0)
-4. **GitHub Personal Access Token** with `repo` and `admin:repo_hook` permissions
-5. **(Optional) Domain in Route 53** if you want to use a custom domain
+4. **GitHub Personal Access Token** with `repo` scope
+   - Create at: https://github.com/settings/tokens
+5. **Route 53 Hosted Zone** for `highlow.lol` (you already have this!)
 
 ## Quick Start
 
@@ -36,11 +37,14 @@ app_name          = "highlow"
 github_repository = "https://github.com/rewdy/highlow"
 github_token      = "ghp_your_actual_token_here"
 main_branch_name  = "main"
-
-# For custom domain (optional):
-domain_name     = "yourdomain.com"      # Your Route 53 domain
-route53_zone_id = "Z1234567890ABC"      # Your Route 53 hosted zone ID
+domain_name       = "highlow.lol"
+route53_zone_id   = "Z1234567890ABC"  # Find in Route 53 console
 ```
+
+**To find your Route 53 Zone ID:**
+1. Go to AWS Console → Route 53 → Hosted zones
+2. Click on `highlow.lol`
+3. Copy the "Hosted zone ID" (starts with Z...)
 
 ### 2. Initialize Terraform
 
@@ -62,60 +66,62 @@ terraform apply
 
 Type `yes` when prompted to confirm.
 
-## Custom Domain Setup
+## What Happens Next
 
-### Option A: Automatic DNS Management (Recommended)
+1. **Amplify creates your app** (~2 min)
+2. **GitHub integration is set up** - every push to `main` triggers a build
+3. **SSL certificate is requested** from AWS Certificate Manager (ACM)
+4. **DNS records are created** in Route 53 for:
+   - `highlow.lol` → Amplify CloudFront distribution
+   - `www.highlow.lol` → Amplify CloudFront distribution
+   - Certificate verification CNAME
+5. **Domain is verified** (~5-10 min for DNS propagation)
+6. **First build starts automatically**
 
-If you provide both `domain_name` and `route53_zone_id`, Terraform will:
-1. Create the Amplify domain association
-2. Request an ACM certificate
-3. Automatically add the required DNS records to Route 53
-4. Wait for certificate validation
+## Accessing Your App
 
-**To find your Route 53 Zone ID:**
-1. Go to AWS Console → Route 53 → Hosted zones
-2. Click on your domain
-3. Copy the "Hosted zone ID" (looks like `Z1234567890ABC`)
+After deployment completes (5-15 minutes total):
 
-### Option B: Manual DNS Management
+```bash
+terraform output
+```
 
-If you only provide `domain_name` (without `route53_zone_id`), Terraform will:
-1. Create the Amplify domain association
-2. Request an ACM certificate
-3. Output instructions for DNS records you need to add manually
+You'll see:
+- **Default Amplify URL**: `https://main.d1234567890abc.amplifyapp.com` (available immediately)
+- **Custom domain**: `https://highlow.lol` (available after DNS propagation)
+- **www subdomain**: `https://www.highlow.lol` (redirects to root domain)
 
-**After `terraform apply`, you'll need to:**
-1. Run `terraform output amplify_domain_verification_record` to get the DNS record
-2. Go to Route 53 → Hosted zones → Your domain
-3. Add the DNS records shown in the Amplify console or Terraform output
-4. Wait for DNS propagation and certificate validation (can take 5-30 minutes)
+## Updating the App
 
-### Option C: No Custom Domain
+Just push to GitHub! Amplify will automatically:
+1. Detect the push
+2. Run `bun install` and `bun run build`
+3. Deploy the new build to CloudFront
+4. Invalidate the CDN cache
 
-Leave `domain_name = ""` to use only the default Amplify domain:
-- `https://main.xxxxx.amplifyapp.com`
+**Zero manual deployment steps needed.** 🎉
 
 ## What Amplify Handles Automatically
 
 You **DO NOT** need to separately configure:
-- ✅ **CloudFront CDN** - Amplify uses CloudFront behind the scenes
-- ✅ **SSL/TLS Certificate** - Amplify creates and manages ACM certificates
-- ✅ **Certificate Renewal** - Amplify auto-renews certificates
-- ✅ **Global Edge Locations** - Content is distributed via CloudFront
-- ✅ **HTTPS Redirects** - Amplify handles HTTP → HTTPS redirects
-- ✅ **Brotli/Gzip Compression** - Automatic at CloudFront edge
+- ✅ **CloudFront CDN** - Global edge locations included
+- ✅ **SSL/TLS Certificate** - ACM certificate auto-created and managed
+- ✅ **Certificate Renewal** - Auto-renewed before expiration
+- ✅ **HTTPS Redirects** - HTTP → HTTPS automatic
+- ✅ **Brotli/Gzip Compression** - Enabled at CloudFront edge
+- ✅ **SPA Routing** - Client-side routing works correctly
+- ✅ **CI/CD Pipeline** - GitHub webhook → build → deploy
 
 ## Outputs
 
-After deployment, you'll see:
+After deployment:
 
 ```
 amplify_app_id              = "d1234567890abc"
 amplify_default_domain      = "https://main.d1234567890abc.amplifyapp.com"
-amplify_app_arn            = "arn:aws:amplify:..."
-custom_domain_url          = "https://yourdomain.com" (if configured)
-dns_instructions           = "..." (if manual DNS setup needed)
-amplify_domain_verification_record = "..." (DNS record for validation)
+amplify_app_arn            = "arn:aws:amplify:us-east-1:..."
+custom_domain_url          = "https://highlow.lol"
+dns_instructions           = "DNS records managed by Terraform"
 ```
 
 ## Monitoring & Logs
@@ -136,31 +142,35 @@ If certificate validation is stuck:
 
 ### Build Failures
 
-Check the Amplify console build logs:
+Check build logs in Amplify console:
 1. AWS Console → Amplify → highlow → Main branch
 2. Click on the failed build
-3. Review each phase (preBuild, build, postBuild)
+3. Review each build phase (preBuild, build)
 
 Common issues:
-- GitHub token permissions
-- Bun installation issues
-- Build command failures
+- GitHub token expired → regenerate and update `terraform.tfvars`
+- Bun version mismatch → check `_LIVE_UPDATES` environment variable
+- Build output directory wrong → verify Vite builds to `/build`
 
 ### Custom Domain Not Working
 
-1. Verify DNS records in Route 53 match Amplify requirements
-2. Check certificate status in ACM console
-3. Ensure domain is pointing to Amplify's CloudFront distribution
-4. Try accessing via `www.yourdomain.com` and root domain separately
+- **DNS propagation takes 5-10 minutes** - be patient!
+- Check Route 53 records: `terraform state list | grep route53`
+- Verify in Amplify console: App → Domain management
+- Try `dig highlow.lol` to check DNS resolution
+- SSL certificate validation can take up to 30 minutes
 
 ## Cost Estimate
 
-AWS Amplify pricing (as of 2025):
-- **Build minutes**: $0.01 per minute (first 1,000 minutes/month free)
-- **Hosting (SSR)**: ~$0.15 per GB served + $0.30 per GB stored
-- **Free tier**: 15 GB served/month, 5 GB stored/month (12 months)
+AWS Amplify pricing for static SPA hosting:
+- **Build minutes**: $0.01 per minute
+  - Free tier: 1000 build minutes/month
+  - Typical build: ~2 minutes
+- **Hosting**: $0.15 per GB served
+  - Free tier: 15 GB/month
+- **Route 53**: $0.50/month for hosted zone
 
-Estimated monthly cost for low-moderate traffic: **$5-20/month**
+**Estimated monthly cost for HighLow: < $1/month** (likely $0 with free tier) 💰
 
 ## Security Notes
 
@@ -178,12 +188,12 @@ terraform destroy
 ```
 
 Type `yes` when prompted. This will:
-- Delete the Amplify app
-- Remove DNS records (if managed by Terraform)
+- Delete the Amplify app and builds
+- Remove DNS records from Route 53
 - Release the ACM certificate
 - Clean up CloudFront distributions
 
-⚠️ **Note**: The domain itself (Route 53 hosted zone) is NOT deleted.
+⚠️ **Note**: Your Route 53 hosted zone for `highlow.lol` will NOT be deleted (managed separately).
 
 ---
 
