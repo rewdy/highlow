@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "biome lint .",
-    "format": "biome format . --write",
-    "check": "biome check .",
     "check:fix": "biome check . --fix",
+    "check": "biome check .",
+    "clean": "rm -rf dist build",
+    "dev": "vite",
+    "format": "biome format . --write",
+    "lint": "biome lint .",
     "preview": "vite preview"
   },
   "dependencies": {
