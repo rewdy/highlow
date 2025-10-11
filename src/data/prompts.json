@@ -33,7 +33,7 @@
     "id": 6,
     "category": "deep",
     "tags": ["truth", "curiosity", "philosophy"],
-    "question": "If you could know the absolute truth about one thing, what would you want to know?"
+    "question": "If you could know the real truth about one thing, what would you want to know?"
   },
   {
     "id": 7,
@@ -45,7 +45,7 @@
     "id": 8,
     "category": "lighthearted",
     "tags": ["imagination", "nature", "humor"],
-    "question": "If animals could talk for a day, which species would you most want to have a conversation with?"
+    "question": "If animals could talk for a day, which species or animal would you most want to have a conversation with?"
   },
   {
     "id": 9,
@@ -262,5 +262,221 @@
     "category": "deep",
     "tags": ["gratitude", "perspective", "presence"],
     "question": "What's something ordinary in your life that would devastate you to lose?"
+  },
+  {
+    "id": 45,
+    "category": "lighthearted",
+    "tags": ["humor", "imagination", "perspective"],
+    "question": "If you could be a fly on the wall for any historical event, which would you choose and what snacks would you bring?"
+  },
+  {
+    "id": 46,
+    "category": "reflective",
+    "tags": ["perspective", "growth", "empathy"],
+    "question": "What's something you thought was a weakness that turned out to be a strength?"
+  },
+  {
+    "id": 47,
+    "category": "deep",
+    "tags": ["time", "mortality", "values"],
+    "question": "If you could pause time for everyone but yourself for one year, what would you do with that time?"
+  },
+  {
+    "id": 48,
+    "category": "lighthearted",
+    "tags": ["silly", "creativity", "fun"],
+    "question": "What's the most useless talent you have that you're secretly proud of?"
+  },
+  {
+    "id": 49,
+    "category": "reflective",
+    "tags": ["boundaries", "self-awareness", "growth"],
+    "question": "What's a boundary you wish you'd set earlier in life?"
+  },
+  {
+    "id": 50,
+    "category": "lighthearted",
+    "tags": ["imagination", "adventure", "humor"],
+    "question": "If you had to live in the world of any video game for a month, which would you choose and why?"
+  },
+  {
+    "id": 51,
+    "category": "deep",
+    "tags": ["perspective", "values", "meaning"],
+    "question": "What would change about your daily life if you truly believed you were enough, exactly as you are?"
+  },
+  {
+    "id": 52,
+    "category": "reflective",
+    "tags": ["joy", "presence", "self-awareness"],
+    "question": "When was the last time you laughed so hard you cried? What made it so funny?"
+  },
+  {
+    "id": 53,
+    "category": "lighthearted",
+    "tags": ["perspective", "humor", "imagination"],
+    "question": "If your life had background music like a movie, what genre would dominate your soundtrack?"
+  },
+  {
+    "id": 54,
+    "category": "deep",
+    "tags": ["humanity", "empathy", "perspective"],
+    "question": "What's something you think everyone experiences but rarely talks about?"
+  },
+  {
+    "id": 55,
+    "category": "reflective",
+    "tags": ["change", "perspective", "growth"],
+    "question": "What's the hardest truth about yourself that you've had to accept?"
+  },
+  {
+    "id": 56,
+    "category": "lighthearted",
+    "tags": ["silly", "personality", "fun"],
+    "question": "What's your most controversial opinion about a completely unimportant topic?"
+  },
+  {
+    "id": 57,
+    "category": "deep",
+    "tags": ["legacy", "impact", "meaning"],
+    "question": "What do you want people to feel when they think of you?"
+  },
+  {
+    "id": 58,
+    "category": "reflective",
+    "tags": ["perspective", "values", "priorities"],
+    "question": "If you could only keep five possessions, what would they be and why?"
+  },
+  {
+    "id": 59,
+    "category": "lighthearted",
+    "tags": ["creativity", "imagination", "humor"],
+    "question": "If you opened a restaurant, what would it be called and what would be the signature dish?"
+  },
+  {
+    "id": 60,
+    "category": "deep",
+    "tags": ["perspective", "growth", "wisdom"],
+    "question": "What's a piece of advice everyone gives that you think is actually terrible?"
+  },
+  {
+    "id": 61,
+    "category": "reflective",
+    "tags": ["relationships", "connection", "vulnerability"],
+    "question": "What do you wish people understood about you without you having to explain it?"
+  },
+  {
+    "id": 62,
+    "category": "lighthearted",
+    "tags": ["perspective", "humor", "personality"],
+    "question": "If you were a kitchen appliance, which one would you be and why?"
+  },
+  {
+    "id": 63,
+    "category": "deep",
+    "tags": ["truth", "courage", "authenticity"],
+    "question": "What truth are you avoiding that you know you need to face?"
+  },
+  {
+    "id": 64,
+    "category": "reflective",
+    "tags": ["perspective", "gratitude", "growth"],
+    "question": "What's a 'failure' from your past that you're now grateful for?"
+  },
+  {
+    "id": 65,
+    "category": "lighthearted",
+    "tags": ["nostalgia", "fun", "imagination"],
+    "question": "What trend from your teenage years do you wish would make a comeback?"
+  },
+  {
+    "id": 66,
+    "category": "deep",
+    "tags": ["perception", "reality", "philosophy"],
+    "question": "Do you think we're all experiencing the same reality, or does each person live in their own version of the world?"
+  },
+  {
+    "id": 67,
+    "category": "reflective",
+    "tags": ["identity", "growth", "perspective"],
+    "question": "What part of your personality surprises people when they first get to know you?"
+  },
+  {
+    "id": 68,
+    "category": "lighthearted",
+    "tags": ["silly", "imagination", "adventure"],
+    "question": "If you could shrink down to the size of an ant for a day, what would you want to explore?"
+  },
+  {
+    "id": 69,
+    "category": "deep",
+    "tags": ["purpose", "meaning", "existence"],
+    "question": "What do you think you're here to learn in this lifetime?"
+  },
+  {
+    "id": 70,
+    "category": "reflective",
+    "tags": ["perspective", "values", "self-awareness"],
+    "question": "What do you defend passionately, even though you know it might not be that important?"
+  },
+  {
+    "id": 71,
+    "category": "lighthearted",
+    "tags": ["perspective", "humor", "creativity"],
+    "question": "If you could add one completely absurd rule to society that everyone had to follow, what would it be?"
+  },
+  {
+    "id": 72,
+    "category": "deep",
+    "tags": ["connection", "vulnerability", "intimacy"],
+    "question": "What makes you feel truly seen by another person?"
+  },
+  {
+    "id": 73,
+    "category": "reflective",
+    "tags": ["perspective", "courage", "growth"],
+    "question": "What would you do differently if you knew no one would judge you for it?"
+  },
+  {
+    "id": 74,
+    "category": "lighthearted",
+    "tags": ["imagination", "fun", "perspective"],
+    "question": "If you could have a personal theme song play every time you entered a room, what would it be?"
+  },
+  {
+    "id": 75,
+    "category": "deep",
+    "tags": ["perspective", "wisdom", "paradox"],
+    "question": "What's something about you that's both completely true and completely false at the same time?"
+  },
+  {
+    "id": 76,
+    "category": "reflective",
+    "tags": ["communication", "relationships", "honesty"],
+    "question": "What's something you pretend to agree with to avoid conflict, even though you don't actually agree?"
+  },
+  {
+    "id": 77,
+    "category": "lighthearted",
+    "tags": ["perspective", "creativity", "imagination"],
+    "question": "If your pet (or an imaginary pet) could write your biography, what embarrassing chapter would they definitely include?"
+  },
+  {
+    "id": 78,
+    "category": "deep",
+    "tags": ["choice", "perspective", "values"],
+    "question": "What's more important: being happy or being right? And does your answer change depending on the situation?"
+  },
+  {
+    "id": 79,
+    "category": "reflective",
+    "tags": ["perspective", "self-awareness", "growth"],
+    "question": "What compliment do you struggle to accept, and what might that reveal about you?"
+  },
+  {
+    "id": 80,
+    "category": "lighthearted",
+    "tags": ["silly", "perspective", "humor"],
+    "question": "If you could make one thing from a cartoon or movie actually exist in real life, what would cause the most chaos?"
   }
 ]
