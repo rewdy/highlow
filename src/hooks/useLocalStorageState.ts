@@ -10,7 +10,7 @@ import { useState } from "react";
 export const useLocalStorageState = <T>(
   key: string,
   defaultValue: T,
-): [T, (value: T) => void] => {
+): [T, (value: T | ((prev: T) => T)) => void] => {
   const [state, setState] = useState<T>(() => {
     if (typeof window === "undefined") {
       return defaultValue;
@@ -23,13 +23,16 @@ export const useLocalStorageState = <T>(
     }
   });
 
-  const setLocalStorageState = (value: T) => {
+  const setLocalStorageState = (value: T | ((prev: T) => T)) => {
+    // Handle both direct values and updater functions
+    const newValue = value instanceof Function ? value(state) : value;
+
     try {
-      window.localStorage.setItem(key, JSON.stringify(value));
+      window.localStorage.setItem(key, JSON.stringify(newValue));
     } catch {
       // Ignore write errors. What can you do?
     }
-    setState(value);
+    setState(newValue);
   };
 
   return [state, setLocalStorageState];

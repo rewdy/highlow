@@ -1,3 +1,16 @@
+:root {
+  --color-background-start: #1a1a2e;
+  --color-background-end: #16213e;
+  --color-text: #ffffff;
+  --color-accent: #f093fb;
+  --color-accent-text: #000;
+  --color-accent-hover: #f5576c;
+  --color-border: #44475a;
+  --color-toggle-bg: #44475a;
+  --color-toggle-thumb: #f093fb;
+  --font-family: "Alan Sans", sans-serif;
+}
+
 html,
 body {
   @media (prefers-color-scheme: dark) {
@@ -5,9 +18,13 @@ body {
   }
 
   /* Simple globals */
-  font-family: "Alan Sans", sans-serif;
-  color: #fff;
-  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background: linear-gradient(
+    to bottom,
+    var(--color-background-start),
+    var(--color-background-end)
+  );
 
   /* Prevent mobile Safari overscroll/rubber band effect */
   overscroll-behavior: none;
@@ -22,5 +39,16 @@ body {
 }
 
 a {
-  color: #f093fb;
+  color: var(--color-accent);
+}
+
+button {
+  font-family: var(--font-family);
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  border: none;
+  cursor: pointer;
 }

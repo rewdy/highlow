@@ -1,16 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocation, useParams } from "wouter";
 import { PromptBranding } from "../components/Branding";
-import { CustomToggle } from "../components/CustomToggle";
 import { PromptCard } from "../components/PromptCard";
 import { PromptNavButton } from "../components/PromptNavButton";
+import { Settings } from "../components/Settings";
+import { useSettings } from "../components/SettingsContext";
 import {
   getNextPromptId,
   getPreviousPromptId,
   getRandomPromptId,
   loadPromptById,
 } from "../data/prompts";
-import { useLocalStorageState } from "../hooks/useLocalStorageState";
 import { useSwipe } from "../hooks/useSwipe";
 import type { Prompt } from "../models/prompt.model";
 import "./ViewPrompt.css";
@@ -23,10 +23,9 @@ type TransitionState = "idle" | "exiting" | "entering" | "loading";
 export function PromptRoute() {
   const params = useParams();
   const [_, navigate] = useLocation();
-  const [swipeRandom, setSwipeRandom] = useLocalStorageState(
-    "swipeRandom",
-    true,
-  );
+  const {
+    settings: { swipeRandom },
+  } = useSettings();
 
   const [prompt, setPrompt] = useState<Prompt | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -206,13 +205,7 @@ export function PromptRoute() {
           <PromptBranding />
         </div>
 
-        <div className="prompt-view__settings">
-          <CustomToggle
-            checked={swipeRandom}
-            onChange={setSwipeRandom}
-            label="Random"
-          />
-        </div>
+        <Settings />
       </header>
 
       <div className="prompt-view" {...bind}>

@@ -1,5 +1,6 @@
 import { Route, Switch } from "wouter";
 import "./App.css";
+import { SettingsProvider } from "./components/SettingsContext";
 import { Home } from "./routes/Home";
 import { RandomPromptRoute } from "./routes/RandomPrompt";
 import { PromptRoute } from "./routes/ViewPrompt";
@@ -10,11 +11,13 @@ import { PromptRoute } from "./routes/ViewPrompt";
 export const App = () => {
   return (
     <div className="App">
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/prompt/:id" component={PromptRoute} />
-        <Route path="/prompt/random" component={RandomPromptRoute} />
-      </Switch>
+      <SettingsProvider>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/prompt/:id" component={PromptRoute} />
+          <Route path="/prompt/random" component={RandomPromptRoute} />
+        </Switch>
+      </SettingsProvider>
     </div>
   );
 };
