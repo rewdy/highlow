@@ -14,15 +14,15 @@
 }
 
 .prompt-card--lighthearted {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #5c981d 0%, #afac1c 100%);
 }
 
 .prompt-card--reflective {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #1a7bd1 0%, #00cbfe 100%);
 }
 
 .prompt-card--deep {
-  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(135deg, #7816c3 0%, #ca0af1 100%);
 }
 
 .prompt-card__content {
